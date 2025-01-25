@@ -1,16 +1,40 @@
 ---
-
+import "@fontsource-variable/nunito";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>kcela</title>
+  </head>
+  <body class="bg-blue-900 text-white">
+    <div class="flex flex-col justify-center items-center h-screen w-screen">
+      <h1 id="title" class="text-9xl">
+        kcela<span class="text-amber-300">.</span>
+      </h1>
+      <div id="links" class="flex flex-row gap-x-6 text-xl font-bold">
+        <a class="hover:underline" href="https://osu.ppy.sh/users/266596"
+          >osu!</a
+        >
+		|
+        <a class="hover:underline" href="https://github.com/ksee97">Github</a>
+      </div>
+    </div>
+    <script>
+      import gsap from "gsap";
+
+      gsap.fromTo(
+        "#title",
+        { opacity: 0, x: -80 },
+        { opacity: 1, x: 0, duration: 0.8 }
+      );
+      gsap.fromTo(
+        "#links",
+        { opacity: 0, x: 80 },
+        { opacity: 1, x: 0, duration: 0.8 }
+      );
+    </script>
+  </body>
 </html>
