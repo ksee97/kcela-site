@@ -14,13 +14,21 @@ import "@fontsource-variable/nunito";
       <h1 id="title" class="text-9xl">
         kcela<span class="text-amber-300">.</span>
       </h1>
-      <div id="links" class="flex flex-row gap-x-6 text-xl font-bold">
-        <a class="hover:underline" href="https://osu.ppy.sh/users/266596"
+      <div id="profile-links" class="flex flex-row gap-x-6 text-xl font-bold mb-6 mt-2">
+        <a  href="https://osu.ppy.sh/users/266596"
           >osu!</a
         >
 		|
-        <a class="hover:underline" href="https://github.com/ksee97">Github</a>
+        <a href="https://github.com/ksee97">Github</a>
       </div>
+	  <div class="latex4000Webring font-semibold text-md text-center">
+		<a href="https://nonacademic.net" title="Collective">Latex 4000</a>
+		<div class="latex4000WebringButtons">
+			<a href="https://nonacademic.net/ring?action=prev&amp;from=kcela" title="Previous">←</a>
+			<a href="https://nonacademic.net/ring?action=rand&amp;from=kcela" title="Random">Random</a>
+			<a href="https://nonacademic.net/ring?action=next&amp;from=kcela" title="Next">→</a>
+		</div>
+	</div>
     </div>
     <script>
       import gsap from "gsap";
@@ -31,10 +39,21 @@ import "@fontsource-variable/nunito";
         { opacity: 1, x: 0, duration: 0.8 }
       );
       gsap.fromTo(
-        "#links",
+        "#profile-links",
         { opacity: 0, x: 80 },
         { opacity: 1, x: 0, duration: 0.8 }
+      );
+	  gsap.fromTo(
+        ".latex4000Webring",
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 0.8 }
       );
     </script>
   </body>
 </html>
+
+<style>
+	a {
+		@apply underline hover:text-amber-300 duration-200 transition-colors
+	}
+</style>
